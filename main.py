@@ -1,13 +1,25 @@
-# FastHRML: classe para criar o aplicativo
+# fast_app: classe para criar o aplicativo
 # serve: função para deixar o site online
-from fasthtml.common import FastHTML, serve
+# Titled: classe que facilita criação de títulos
+from fasthtml.common import fast_app, serve, Titled
+# importando funções do arquivo components.py como uma biblioteca
+from components import gerar_titulo, gerar_formulario
+
 
 # Criação do aplicativo
-app = FastHTML()
+app, routes = fast_app()
 
-# Método para execução da home
-@app.get("/")
+# Will run on http://localhost:5001/
+@routes("/")
 def homepage():
-    return "<h1>Hello</h1>"
-    
+    return gerar_titulo("Birthday Clock","Hello World")
+
+@routes("/form")
+def homepage():
+    formulario = gerar_formulario()
+    # terceiro parâmetro do formulario aceita estruturação do título (como concatenação de divs)
+    return Titled("Formulário de teste",formulario)
+
+#parei o tutorial aqui: https://youtu.be/-ff9RpzeHG4?t=1542
+
 serve()
