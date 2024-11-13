@@ -16,3 +16,4 @@ def gerar_formulario():
         action="/adicionar_tarefa"
     )
     return formulario
+

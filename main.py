@@ -1,25 +1,34 @@
 # fast_app: classe para criar o aplicativo
 # serve: função para deixar o site online
 # Titled: classe que facilita criação de títulos
-from fasthtml.common import fast_app, serve, Titled
+from fasthtml.common import *
 # importando funções do arquivo components.py como uma biblioteca
-from components import gerar_titulo, gerar_formulario
+from components import gerar_titulo
+from card3d import card_3d
 
+hdrs = [Style('''* { box-sizing: border-box; }
+    html, body { width: 100%; height: 100%; display: flex; justify-content: center; align-items: center; }
+    body { 
+        font-family: 'Arial Black', 'Arial Bold', Gadget, sans-serif;
+        perspective: 1500px; background: linear-gradient(#666, #222);
+    }''')]
 
-# Criação do aplicativo
-app, routes = fast_app()
+app = FastHTML(hdrs=hdrs)
+rt = app.route
 
-# Will run on http://localhost:5001/
-@routes("/")
+@rt('/')
 def homepage():
-    return gerar_titulo("Birthday Clock","Hello World")
+    ##.Outra forma de chamar classes:
+    #return gerar_titulo("Birthday Clock","Hello World")
+    
+    url_image = "https://ucarecdn.com/35a0e8a7-fcc5-48af-8a3f-70bb96ff5c48/-/preview/750x1000/"
 
-@routes("/form")
-def homepage():
-    formulario = gerar_formulario()
-    # terceiro parâmetro do formulario aceita estruturação do título (como concatenação de divs)
-    return Titled("Formulário de teste",formulario)
+    return Div(
+        Div(card_3d('Components!', url_image, 1.5, left_align=True, hx_get='/click')),
+    )
 
-#parei o tutorial aqui: https://youtu.be/-ff9RpzeHG4?t=1542
+@rt("/click")
+#Modificar para evento de confetes
+def get(): return P('Clicked!')
 
 serve()
