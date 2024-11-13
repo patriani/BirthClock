@@ -10,11 +10,11 @@ from components import gerar_titulo, gerar_formulario
 app, routes = fast_app()
 
 # Will run on http://localhost:5001/
-@routes("/")
+@routes("https://birthclock.onrender.com/")
 def homepage():
     return gerar_titulo("Birthday Clock","Hello World")
 
-@routes("/form")
+@routes("https://birthclock.onrender.com/form")
 def homepage():
     formulario = gerar_formulario()
     # terceiro parâmetro do formulario aceita estruturação do título (como concatenação de divs)
