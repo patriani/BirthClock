@@ -22,9 +22,9 @@ def homepage():
     #return gerar_titulo("Birthday Clock","Hello World")
     
     url_image = "https://ucarecdn.com/35a0e8a7-fcc5-48af-8a3f-70bb96ff5c48/-/preview/750x1000/"
-
+    url_gift = "C:\Users\Ricardo\Desktop\GGBR\git_bd\BirthClock\images\A_vibrant_gift_box.webp"
     return Div(
-        Div(card_3d('Components!', url_image, 1.5, left_align=True, hx_get='/click')),
+        Div(card_3d('Components!', url_gift, 1.5, left_align=True, hx_get='/click')),
     )
 
 @rt("/click")
