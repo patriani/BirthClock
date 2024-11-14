@@ -21,7 +21,7 @@ def homepage():
     ##.Outra forma de chamar classes:
     #return gerar_titulo("Birthday Clock","Hello World")
     
-    url_gift = "https://github.com/patriani/BirthClock/blob/main/images/A_vibrant_gift_box.png?raw=true"
+    url_gift = "https://github.com/patriani/BirthClock/blob/main/images/gift_with_bg.png?raw=true"
     return Div(
         Div(card_3d('Components!', url_gift, 1.5, left_align=True, hx_get='/click')),
     )
