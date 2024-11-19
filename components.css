@@ -1,0 +1,4 @@
+me {
+    position: relative; width: 500px; height: 200px; padding: 2em; display:inline-block;
+    font-weight: bold; text-align: center; text-shadow: 0 0 4px #000; color: #ddd;
+}

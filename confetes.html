@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Confetes Caindo</title>
+<style>
+  body {
+    margin: 0;
+    overflow: hidden;
+    background-color: #f0f0f0;
+  }
+
+  .confetti {
+    position: fixed;
+    top: 0;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    pointer-events: none;
+  }
+</style>
+</head>
+<body>
+
+<script>
+  // Função para criar confetes
+  function criarConfete() {
+    const confetti = document.createElement("div");
+    confetti.classList.add("confetti");
+    
+    // Propriedades aleatórias para cada confete
+    const cor = `hsl(${Math.random() * 360}, 100%, 50%)`;
+    const left = Math.random() * window.innerWidth + "px";
+    const tamanho = Math.random() * 8 + 4 + "px";
+    const animaçãoTempo = Math.random() * 3 + 2 + "s";
+    const animaçãoDelay = Math.random() * 2 + "s";
+
+    // Estilização do confete
+    confetti.style.backgroundColor = cor;
+    confetti.style.left = left;
+    confetti.style.width = tamanho;
+    confetti.style.height = tamanho;
+    confetti.style.animation = `fall ${animaçãoTempo} linear ${animaçãoDelay} infinite`;
+
+    // Adiciona o confete ao body
+    document.body.appendChild(confetti);
+
+    // Remove o confete após a animação
+    setTimeout(() => {
+      confetti.remove();
+    }, (parseFloat(animaçãoTempo) + parseFloat(animaçãoDelay)) * 1000);
+  }
+
+  // Cria vários confetes
+  function criarConfetesAleatórios() {
+    for (let i = 0; i < 150; i++) {
+      criarConfete();
+    }
+  }
+
+  // Animação de queda de confetes
+  const estiloAnimacao = document.createElement("style");
+  estiloAnimacao.innerHTML = `
+    @keyframes fall {
+      0% { transform: translateY(-100px) rotate(0deg); opacity: 1; }
+      100% { transform: translateY(100vh) rotate(720deg); opacity: 0; }
+    }
+  `;
+  document.head.appendChild(estiloAnimacao);
+
+  // Iniciar a animação de confetes
+  criarConfetesAleatórios();
+
+  // Manter gerando confetes
+  setInterval(criarConfetesAleatórios, 3000);
+</script>
+
+</body>
+</html>
