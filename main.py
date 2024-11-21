@@ -2,15 +2,16 @@ from fasthtml.common import *
 from components import gerar_titulo, clockdown_timer # Importando funções do arquivo components.py como uma biblioteca
 from card3d import card_3d
 from datetime import datetime # Importando biblioteca para coleta de horário atual
+import random # to select a random "keep calm" frase
 
 hdrs = [Style('''* { box-sizing: border-box; }
-    html, body { width: 100%; height: 100%; display: flex; justify-content: center; align-items: center; }
+    html, body { width: 100%; height: 100%; display: flex; justify-content: center; align-items: center;}
     body { 
         font-family: 'Arial Black', 'Arial Bold', Gadget, sans-serif;
-        perspective: 1500px; background: linear-gradient(#666, #222);
+        perspective: 1500px; background-color:black;;
     }''')]
 
-
+#background: linear-gradient(#666, #222)
 
 app = FastHTML(hdrs=hdrs)
 rt = app.route
@@ -49,12 +50,16 @@ def contagem_regressiva():
         minutos, segundos = divmod(resto, 60)
 
         # Exibir o tempo restante
-        clock_down=f"Tempo restante: {dias}d {horas:02}h {minutos:02}m {segundos:02}s"
+        clock_down=f" {dias}d {horas:02}h {minutos:02}m {segundos:02}s"
         
         # Confdição para confete e código
         # Condição para return apenas do clockdown
-        
-        return P(clock_down)
+        #ScriptX('confetti.js',src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js")
+        seed = random.randint(0, 3)
+
+        fases_vector=['Calma, ainda faltam ','Você está muito anciosa mesmo. Espere por ', 'Pera ae. Ainda faltam  ','Está quase lá :). Só mais ']
+        sty= StyleX('keepcalm.css')
+        return P(fases_vector[seed],clock_down,sty)
 
         # Aguardar 1 segundo antes de atualizar
         
