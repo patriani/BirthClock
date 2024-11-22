@@ -26,8 +26,6 @@ def homepage():
 
 
 @rt("/click")
-#Modificar para evento de confetes
-#def get(): return P('Clicked!')
 def contagem_regressiva():
     # Definir o horário de destino: meia-noite de 13/12/2024
     data_destino = datetime(2024, 12, 13, 0, 0, 0)
@@ -54,14 +52,14 @@ def contagem_regressiva():
         
         # Confdição para confete e código
         # Condição para return apenas do clockdown
-        #ScriptX('confetti.js',src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js")
-        seed = random.randint(0, 3)
+ 
+        seed = random.randint(0, 36)
 
-        fases_vector=['Calma, ainda faltam ','Você está muito anciosa mesmo. Espere por ', 'Pera ae. Ainda faltam  ','Está quase lá :). Só mais ']
+        frases_vector = [ "Segura firme, ainda faltam ",    "Só mais um pouco! Restam apenas ",    "Calma, estamos quase lá! Só mais ",    "A paciência é uma virtude. Espere por ",    "Está pertinho! Só faltam ",    "Respire fundo e espere mais ",    "Você está indo muito bem! Só mais ",    "Continue forte, faltam só ",    "Logo logo chega! Espere só mais ",    "Não desista! Faltam só mais ",    "Tudo está no tempo certo. Só faltam ",    "Segure a emoção! Faltam apenas ",    "Está quase! Espere só mais ",    "O melhor está por vir! Restam só ",    "Quase lá! Só mais ",    "Acalme o coração, ainda faltam ",    "Confie! Só mais ",    "Você está tão perto! Só faltam ",    "Mais um pouquinho! Restam apenas ",    "Continue acreditando! Só mais ",    "Logo chega! Espere mais ",    "Sorria! Falta bem pouco: ",    "Fique firme! Restam só ",    "Estamos quase no fim! Mais ",    "O que é bom sempre vale a pena esperar! Só faltam ",    "Persistência é tudo! Só mais ",    "Tão perto agora! Faltam ",    "Que expectativa boa! Ainda restam ",    "Não apresse o tempo, faltam apenas ",    "A jornada é tão bonita quanto o destino. Só mais ",    "O melhor está chegando. Faltam só ",    "Continue positiva! Só mais ",    "Aguente firme! Restam apenas ",    "Está bem próximo agora! Só mais ",    "Cada segundo vale a pena! Restam ",    "Está chegando a hora! Só faltam ",    "Está quase no fim! Aguarde só mais "]        
+
         sty= StyleX('keepcalm.css')
-        return P(fases_vector[seed],clock_down,sty)
+        return Div(P(frases_vector[seed],clock_down,sty))
 
-        # Aguardar 1 segundo antes de atualizar
         
 
 serve()
