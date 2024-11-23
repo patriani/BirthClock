@@ -32,11 +32,16 @@ def homepage():
 @rt("/click")
 def contagem_regressiva():
     
-    # Definir o horário de destino: meia-noite de 13/12/2024
-    ##data_destino = datetime(2024, 12, 13, 0, 0, 0)
-    data_destino = datetime(2024, 11, 22, 19, 56, 0)
+    # Variável global para acumular clicks: opção de easter egg
     global click_count
     click_count += 1
+
+    # Folha de estilos
+    sty= StyleX('keepcalm.css')
+
+    # Definir o horário de destino: meia-noite de 13/12/2024
+    data_destino = datetime(2024, 12, 13, 0, 0, 0)
+    #valor para teste: data_destino = datetime(2024, 11, 22, 19, 56, 0)
     
     while True:
 
@@ -48,8 +53,9 @@ def contagem_regressiva():
 
         # Se o tempo restante for menor ou igual a zero, encerrar a contagem
         if tempo_restante.total_seconds() <= 0:
-            sty= StyleX('keepcalm.css')
-            return Div(P(f"Chegamos a meia-noite de 13/12/2024! {click_count}",sty))
+            return Div(P("Chegamos a meia-noite de 13/12/2024!",sty))
+
+     
 
         # Extrair dias, horas, minutos e segundos restantes
         dias = tempo_restante.days
@@ -58,20 +64,14 @@ def contagem_regressiva():
 
         # Exibir o tempo restante
         clock_down=f" {dias}d {horas:02}h {minutos:02}m {segundos:02}s"
-        
-        # Confdição para confete e código
-        # Condição para return apenas do clockdown
- 
+         
         seed = random.randint(0, 36)
 
         frases_vector = [ "Segura firme, ainda faltam ",    "Só mais um pouco! Restam apenas ",    "Calma, estamos quase lá! Só mais ",    "A paciência é uma virtude. Espere por ",    "Está pertinho! Só faltam ",    "Respire fundo e espere mais ",    "Você está indo muito bem! Só mais ",    "Continue forte, faltam só ",    "Logo logo chega! Espere só mais ",    "Não desista! Faltam só mais ",    "Tudo está no tempo certo. Só faltam ",    "Segure a emoção! Faltam apenas ",    "Está quase! Espere só mais ",    "O melhor está por vir! Restam só ",    "Quase lá! Só mais ",    "Acalme o coração, ainda faltam ",    "Confie! Só mais ",    "Você está tão perto! Só faltam ",    "Mais um pouquinho! Restam apenas ",    "Continue acreditando! Só mais ",    "Logo chega! Espere mais ",    "Sorria! Falta bem pouco: ",    "Fique firme! Restam só ",    "Estamos quase no fim! Mais ",    "O que é bom sempre vale a pena esperar! Só faltam ",    "Persistência é tudo! Só mais ",    "Tão perto agora! Faltam ",    "Que expectativa boa! Ainda restam ",    "Não apresse o tempo, faltam apenas ",    "A jornada é tão bonita quanto o destino. Só mais ",    "O melhor está chegando. Faltam só ",    "Continue positiva! Só mais ",    "Aguente firme! Restam apenas ",    "Está bem próximo agora! Só mais ",    "Cada segundo vale a pena! Restam ",    "Está chegando a hora! Só faltam ",    "Está quase no fim! Aguarde só mais "]        
-        
-        # colocar um minuto do horário atual
-        # verificar subtração e printar na tela
-
-        sty= StyleX('keepcalm.css')
-        return Div(P(frases_vector[seed],clock_down,sty))
+         
+        return (Div(P(frases_vector[seed],clock_down,sty)),Div(f"Você já clicou {click_count} vezes !!",style="color:white; bottom: 0; "))
 
         
+
 
 serve()
