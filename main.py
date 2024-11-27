@@ -36,6 +36,10 @@ def contagem_regressiva():
     global click_count
     click_count += 1
 
+    images_v=['https://github.com/patriani/BirthClock/blob/main/images/barto.jpeg?raw=true','https://github.com/patriani/BirthClock/blob/main/images/curi_jardim.jpeg?raw=true',
+    'https://github.com/patriani/BirthClock/blob/main/images/curi_quarto.jpeg?raw=true','https://github.com/patriani/BirthClock/blob/main/images/porao.jpeg?raw=true',
+    'https://github.com/patriani/BirthClock/blob/main/images/vinhedo_bar.jpeg?raw=true']
+
     # Folha de estilos
     sty= StyleX('keepcalm.css')
 
@@ -54,9 +58,7 @@ def contagem_regressiva():
         # Se o tempo restante for menor ou igual a zero, encerrar a contagem
         if tempo_restante.total_seconds() <= 0:
             return Div(P("Chegamos a meia-noite de 13/12/2024!",sty))
-
-     
-
+            
         # Extrair dias, horas, minutos e segundos restantes
         dias = tempo_restante.days
         horas, resto = divmod(tempo_restante.seconds, 3600)
@@ -69,6 +71,12 @@ def contagem_regressiva():
 
         frases_vector = [ "Segura firme, ainda faltam ",    "Só mais um pouco! Restam apenas ",    "Calma, estamos quase lá! Só mais ",    "A paciência é uma virtude. Espere por ",    "Está pertinho! Só faltam ",    "Respire fundo e espere mais ",    "Você está indo muito bem! Só mais ",    "Continue forte, faltam só ",    "Logo logo chega! Espere só mais ",    "Não desista! Faltam só mais ",    "Tudo está no tempo certo. Só faltam ",    "Segure a emoção! Faltam apenas ",    "Está quase! Espere só mais ",    "O melhor está por vir! Restam só ",    "Quase lá! Só mais ",    "Acalme o coração, ainda faltam ",    "Confie! Só mais ",    "Você está tão perto! Só faltam ",    "Mais um pouquinho! Restam apenas ",    "Continue acreditando! Só mais ",    "Logo chega! Espere mais ",    "Sorria! Falta bem pouco: ",    "Fique firme! Restam só ",    "Estamos quase no fim! Mais ",    "O que é bom sempre vale a pena esperar! Só faltam ",    "Persistência é tudo! Só mais ",    "Tão perto agora! Faltam ",    "Que expectativa boa! Ainda restam ",    "Não apresse o tempo, faltam apenas ",    "A jornada é tão bonita quanto o destino. Só mais ",    "O melhor está chegando. Faltam só ",    "Continue positiva! Só mais ",    "Aguente firme! Restam apenas ",    "Está bem próximo agora! Só mais ",    "Cada segundo vale a pena! Restam ",    "Está chegando a hora! Só faltam ",    "Está quase no fim! Aguarde só mais "]        
          
+        if (click_count%6==0):
+            seed_images = random.randint(0, (len(images_v)-1))
+            return Div(
+            Div(card_3d('', images_v[seed_images], 1.5, left_align=True, hx_get='/click'))
+            )
+
         return (Div(P(frases_vector[seed],clock_down,sty)),Div(f"Você já clicou {click_count} vezes !!",style="color:white; bottom: 0; "))
 
         
