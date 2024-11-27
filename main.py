@@ -38,10 +38,11 @@ def contagem_regressiva():
 
     images_v=['https://github.com/patriani/BirthClock/blob/main/images/barto.jpeg?raw=true','https://github.com/patriani/BirthClock/blob/main/images/curi_jardim.jpeg?raw=true',
     'https://github.com/patriani/BirthClock/blob/main/images/curi_quarto.jpeg?raw=true','https://github.com/patriani/BirthClock/blob/main/images/porao.jpeg?raw=true',
-    'https://github.com/patriani/BirthClock/blob/main/images/vinhedo_bar.jpeg?raw=true','https://github.com/patriani/BirthClock/blob/main/images/WhatsApp%20Image%202024-11-26%20at%2021.15.55.jpeg?raw=true',
-    'https://github.com/patriani/BirthClock/blob/main/images/WhatsApp%20Image%202024-11-26%20at%2021.15.56(1).jpeg?raw=true','https://github.com/patriani/BirthClock/blob/main/images/WhatsApp%20Image%202024-11-26%20at%2021.15.56(2).jpeg?raw=true',
-    'https://github.com/patriani/BirthClock/blob/main/images/WhatsApp%20Image%202024-11-26%20at%2021.15.56(3).jpeg?raw=true','https://github.com/patriani/BirthClock/blob/main/images/WhatsApp%20Image%202024-11-26%20at%2021.15.56.jpeg?raw=true',
-    ,'https://github.com/patriani/BirthClock/blob/main/images/WhatsApp%20Image%202024-11-26%20at%2021.15.55(1).jpeg?raw=true']
+    'https://github.com/patriani/BirthClock/blob/main/images/vinhedo_bar.jpeg?raw=true','https://github.com/patriani/BirthClock/blob/main/images/acai.jpeg?raw=true',
+    'https://github.com/patriani/BirthClock/blob/main/images/beijo.jpeg?raw=true','https://github.com/patriani/BirthClock/blob/main/images/carro.jpeg?raw=true',
+    'https://github.com/patriani/BirthClock/blob/main/images/coracao.jpeg?raw=true','https://github.com/patriani/BirthClock/blob/main/images/dormindo.jpeg?raw=true',
+    'https://github.com/patriani/BirthClock/blob/main/images/macaquinho.jpeg?raw=true','https://github.com/patriani/BirthClock/blob/main/images/peixinho.jpeg?raw=true',
+    'https://github.com/patriani/BirthClock/blob/main/images/social.jpeg?raw=true']
     
     # Folha de estilos
     sty= StyleX('keepcalm.css')
