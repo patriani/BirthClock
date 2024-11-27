@@ -38,8 +38,11 @@ def contagem_regressiva():
 
     images_v=['https://github.com/patriani/BirthClock/blob/main/images/barto.jpeg?raw=true','https://github.com/patriani/BirthClock/blob/main/images/curi_jardim.jpeg?raw=true',
     'https://github.com/patriani/BirthClock/blob/main/images/curi_quarto.jpeg?raw=true','https://github.com/patriani/BirthClock/blob/main/images/porao.jpeg?raw=true',
-    'https://github.com/patriani/BirthClock/blob/main/images/vinhedo_bar.jpeg?raw=true']
-
+    'https://github.com/patriani/BirthClock/blob/main/images/vinhedo_bar.jpeg?raw=true','https://github.com/patriani/BirthClock/blob/main/images/WhatsApp%20Image%202024-11-26%20at%2021.15.55.jpeg?raw=true',
+    'https://github.com/patriani/BirthClock/blob/main/images/WhatsApp%20Image%202024-11-26%20at%2021.15.56(1).jpeg?raw=true','https://github.com/patriani/BirthClock/blob/main/images/WhatsApp%20Image%202024-11-26%20at%2021.15.56(2).jpeg?raw=true',
+    'https://github.com/patriani/BirthClock/blob/main/images/WhatsApp%20Image%202024-11-26%20at%2021.15.56(3).jpeg?raw=true','https://github.com/patriani/BirthClock/blob/main/images/WhatsApp%20Image%202024-11-26%20at%2021.15.56.jpeg?raw=true',
+    ,'https://github.com/patriani/BirthClock/blob/main/images/WhatsApp%20Image%202024-11-26%20at%2021.15.55(1).jpeg?raw=true']
+    
     # Folha de estilos
     sty= StyleX('keepcalm.css')
 
@@ -73,6 +76,7 @@ def contagem_regressiva():
          
         if (click_count%6==0):
             seed_images = random.randint(0, (len(images_v)-1))
+            print(images_v[seed_images])
             return Div(
             Div(card_3d('', images_v[seed_images], 1.5, left_align=True, hx_get='/click'))
             )
