@@ -35,6 +35,15 @@ def contagem_regressiva():
     # Variável global para acumular clicks: opção de easter egg
     global click_count
     click_count += 1
+    
+    frases_vector = [ "Segura firme, ainda faltam ",    "Só mais um pouco! Restam apenas ",    "Calma, estamos quase lá! Só mais ",    "A paciência é uma virtude. Espere por ",
+    "Está pertinho! Só faltam ",    "Respire fundo e espere mais ",    "Você está indo muito bem! Só mais ",    "Continue forte, faltam só ",    "Logo logo chega! Espere só mais ",
+    "Não desista! Faltam só mais ",    "Tudo está no tempo certo. Só faltam ",    "Segure a emoção! Faltam apenas ",    "Está quase! Espere só mais ",    "O melhor está por vir! Restam só ",
+    "Quase lá! Só mais ",    "Acalme o coração, ainda faltam ",    "Confie! Só mais ",    "Você está tão perto! Só faltam ",    "Mais um pouquinho! Restam apenas ",    "Continue acreditando! Só mais ",
+    "Logo chega! Espere mais ",    "Sorria! Falta bem pouco: ",    "Fique firme! Restam só ",    "Estamos quase no fim! Mais ",    "O que é bom sempre vale a pena esperar! Só faltam ",
+    "Persistência é tudo! Só mais ",    "Tão perto agora! Faltam ",    "Que expectativa boa! Ainda restam ",    "Não apresse o tempo, faltam apenas ",    "A jornada é tão bonita quanto o destino. Só mais ",
+    "O melhor está chegando. Faltam só ",    "Continue positiva! Só mais ",    "Aguente firme! Restam apenas ",    "Está bem próximo agora! Só mais ",    "Cada segundo vale a pena! Restam ",
+    "Está chegando a hora! Só faltam ",    "Está quase no fim! Aguarde só mais "]        
 
     images_v=['https://github.com/patriani/BirthClock/blob/main/images/barto.jpeg?raw=true','https://github.com/patriani/BirthClock/blob/main/images/curi_jardim.jpeg?raw=true',
     'https://github.com/patriani/BirthClock/blob/main/images/curi_quarto.jpeg?raw=true','https://github.com/patriani/BirthClock/blob/main/images/porao.jpeg?raw=true',
@@ -73,8 +82,12 @@ def contagem_regressiva():
          
         seed = random.randint(0, 36)
 
-        frases_vector = [ "Segura firme, ainda faltam ",    "Só mais um pouco! Restam apenas ",    "Calma, estamos quase lá! Só mais ",    "A paciência é uma virtude. Espere por ",    "Está pertinho! Só faltam ",    "Respire fundo e espere mais ",    "Você está indo muito bem! Só mais ",    "Continue forte, faltam só ",    "Logo logo chega! Espere só mais ",    "Não desista! Faltam só mais ",    "Tudo está no tempo certo. Só faltam ",    "Segure a emoção! Faltam apenas ",    "Está quase! Espere só mais ",    "O melhor está por vir! Restam só ",    "Quase lá! Só mais ",    "Acalme o coração, ainda faltam ",    "Confie! Só mais ",    "Você está tão perto! Só faltam ",    "Mais um pouquinho! Restam apenas ",    "Continue acreditando! Só mais ",    "Logo chega! Espere mais ",    "Sorria! Falta bem pouco: ",    "Fique firme! Restam só ",    "Estamos quase no fim! Mais ",    "O que é bom sempre vale a pena esperar! Só faltam ",    "Persistência é tudo! Só mais ",    "Tão perto agora! Faltam ",    "Que expectativa boa! Ainda restam ",    "Não apresse o tempo, faltam apenas ",    "A jornada é tão bonita quanto o destino. Só mais ",    "O melhor está chegando. Faltam só ",    "Continue positiva! Só mais ",    "Aguente firme! Restam apenas ",    "Está bem próximo agora! Só mais ",    "Cada segundo vale a pena! Restam ",    "Está chegando a hora! Só faltam ",    "Está quase no fim! Aguarde só mais "]        
-         
+        if(click_count==15):
+            return (Div(P("Cupom de uso único: TRENTO_ORIGINAL_NAMORADO10",style="margin: 0; font-size: 16px; color: #333;"),style="background-color: white; padding: 20px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); border-radius: 8px; text-align: center;"))
+
+        if(click_count==30):
+            return (Div(P("Cupom de uso único: TRENTO_DARK_NAMORADO10",style="margin: 0; font-size: 16px; color: #333;"),style="background-color: white; padding: 20px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); border-radius: 8px; text-align: center;"))
+
         if (click_count%6==0):
             seed_images = random.randint(0, (len(images_v)-1))
             print(images_v[seed_images])
@@ -82,7 +95,7 @@ def contagem_regressiva():
             Div(card_3d('', images_v[seed_images], 1.5, left_align=True, hx_get='/click'))
             )
 
-        return (Div(P(frases_vector[seed],clock_down,sty)),Div(f"Você já clicou {click_count} vezes !!",style="color:white; bottom: 0; "),Div(" Birthday Clockdown V1.1",style="font-size:x-small ;margin-top:14px; color:white; bottom: 0; "))
+        return (Div(P(frases_vector[seed],clock_down,sty)),Div(f"Você já clicou {click_count} vezes !!",style="color:white; bottom: 0; "),Div(" Birthday Clockdown V1.2",style="font-size:x-small ;margin-top:14px; color:white; bottom: 0; "))
 
         
 
