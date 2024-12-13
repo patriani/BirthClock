@@ -1,0 +1,20 @@
+me {
+    position: relative;
+    width: 300px;
+    height: 400px; /* Mantém a altura fixa */
+    padding: 1em;
+    display: flex;
+    justify-content: center;
+    align-items: justify;
+    font-weight: bold;
+    color: #ff69b4;
+    font-size: 1.25em;
+    box-shadow: 0 1px 5px #00000099;
+    border-radius: 10px;
+    background-color: white;
+    transition: 0.3s ease-out;
+    transition-property: transform, box-shadow;
+  
+    overflow-y: auto;
+    word-wrap: break-word;
+  }

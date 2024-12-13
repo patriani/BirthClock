@@ -54,12 +54,12 @@ def contagem_regressiva():
     'https://github.com/patriani/BirthClock/blob/main/images/social.jpeg?raw=true']
     
     # Folha de estilos
-    sty= StyleX('keepcalm.css')
-
+    sty = StyleX('keepcalm.css')
+    sty_2 = StyleX('Dday.css')
+    
     # Definir o horário de destino: meia-noite de 13/12/2024
     data_destino = datetime(2024, 12, 13, 0, 0, 0)
-    #valor para teste: data_destino = datetime(2024, 11, 22, 19, 56, 0)
-    
+
     while True:
 
         # Hora atual
@@ -70,8 +70,8 @@ def contagem_regressiva():
 
         # Se o tempo restante for menor ou igual a zero, encerrar a contagem
         if tempo_restante.total_seconds() <= 0:
-            return Div(P("Chegamos a meia-noite de 13/12/2024!",sty))
-            
+            return Div(Div(P("Parabéns AMOOOOR! Desejo muito mais novidades empolgantes, tranquilidade, muuuuuuuita saúde, a companhia de bons amigos e MUITO EU na sua vida. Fico feliz demais por podermos comemorar juntos mais um aniversário seu. Quero que cada ano seja mais e mais especial. Você vem fazendo isso por mim em várias datas festivas e eu também vou sempre tentar trazer uma pitada de mágica pros seus aniversários, Natais, Páscoas e em todas as outras datas que você valoriza. Continua sendo minha cúmplice, meu amor e minha maior amiga? Me dá um abração e um beijo se sim.",sty_2)))
+
         # Extrair dias, horas, minutos e segundos restantes
         dias = tempo_restante.days
         horas, resto = divmod(tempo_restante.seconds, 3600)
@@ -101,3 +101,4 @@ def contagem_regressiva():
 
 
 serve()
+

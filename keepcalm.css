@@ -5,7 +5,6 @@ me {
     padding: 1em;
     display: flex; /* Changed from inline-block to flex for centering */
     justify-content: center; /* Horizontally centers the text */
-    align-items: center; /* Vertically centers the text */
     font-weight: bold;
     text-align: center; /* Ensures text alignment is centered within the div */
     color: #ff69b4; /* Bright pink color for the text */
