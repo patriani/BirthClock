@@ -95,7 +95,7 @@ def contagem_regressiva():
             Div(card_3d('', images_v[seed_images], 1.5, left_align=True, hx_get='/click'))
             )
 
-        return (Div(P(frases_vector[seed],clock_down,sty)),Div(f"Você já clicou {click_count} vezes !!",style="color:white; bottom: 0; "),Div(" Birthday Clockdown V1.2",style="font-size:x-small ;margin-top:14px; color:white; bottom: 0; "))
+        return (Div(P(frases_vector[seed],clock_down,sty)),Div(f"Você já clicou {click_count} vezes !!",style="color:white; bottom: 0; "),Div(" Birthday Clockdown V1.2.1",style="font-size:x-small ;margin-top:14px; color:white; bottom: 0; "))
 
         
 
