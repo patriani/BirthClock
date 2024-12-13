@@ -58,7 +58,7 @@ def contagem_regressiva():
     sty_2 = StyleX('Dday.css')
     
     # Definir o horário de destino: meia-noite de 13/12/2024
-    data_destino = datetime(2024, 12, 13, 0, 1, 0)
+    data_destino = datetime(2024, 12, 13, 00, 00, 00)
 
     while True:
 
@@ -67,10 +67,6 @@ def contagem_regressiva():
 
         # Calcular o tempo restante
         tempo_restante = data_destino - agora
-
-        # Se o tempo restante for menor ou igual a zero, encerrar a contagem
-        if tempo_restante.total_seconds() <= 0:
-            return Div(Div(P("Parabéns AMOOOOR! Desejo muito mais novidades empolgantes, tranquilidade, muuuuuuuita saúde, a companhia de bons amigos e MUITO EU na sua vida. Fico feliz demais por podermos comemorar juntos mais um aniversário seu. Quero que cada ano seja mais e mais especial. Você vem fazendo isso por mim em várias datas festivas e eu também vou sempre tentar trazer uma pitada de mágica pros seus aniversários, Natais, Páscoas e em todas as outras datas que você valoriza. Continua sendo minha cúmplice, meu amor e minha maior amiga? Me dá um abração e um beijo se sim.",sty_2)))
 
         # Extrair dias, horas, minutos e segundos restantes
         dias = tempo_restante.days
@@ -81,6 +77,10 @@ def contagem_regressiva():
         clock_down=f" {dias}d {horas:02}h {minutos:02}m {segundos:02}s"
          
         seed = random.randint(0, 36)
+
+        # Se o tempo restante for menor ou igual a zero, encerrar a contagem
+        if (tempo_restante.total_seconds() <= 0):
+            return Div(Div(P("Parabéns AMOOOOR!🎉 Desejo muito mais novidades empolgantes, tranquilidade, muuuuuuuita saúde, a companhia de bons amigos e MUITO EU na sua vida. Fico feliz demais por podermos comemorar juntos mais um aniversário seu. Quero que cada ano seja mais e mais especial. Você vem fazendo isso por mim em várias datas festivas e eu também vou sempre tentar trazer uma pitada de mágica pros seus aniversários, Natais, Páscoas e em todas as outras datas que você valoriza. Continua sendo minha cúmplice, meu amor e minha maior amiga? Me dá um abração e um beijo se sim.",sty_2)))
 
         if(click_count==15):
             return (Div(P("Cupom de uso único: TRENTO_ORIGINAL_NAMORADO10",style="margin: 0; font-size: 16px; color: #333;"),style="background-color: white; padding: 20px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); border-radius: 8px; text-align: center;"))
