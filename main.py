@@ -58,7 +58,7 @@ def contagem_regressiva():
     sty_2 = StyleX('Dday.css')
     
     # Definir o horário de destino: meia-noite de 13/12/2024
-    data_destino = datetime(2024, 12, 13, 0, 0, 0)
+    data_destino = datetime(2024, 12, 13, 0, 1, 0)
 
     while True:
 
